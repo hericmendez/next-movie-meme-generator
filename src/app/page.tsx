@@ -5,7 +5,7 @@ import Head from "next/head";
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
 import Link from "next/link";
-
+import { API_KEY } from "../../API_KEY";
 const Container = styled.div`
   text-align: center;
   padding: 80px 20px;
@@ -79,7 +79,7 @@ export default function Home() {
     setInput(event.target.value); // Atualiza o valor do estado
   };
 
-  const API_KEY = "90552eb8ef64f977dd97e4d807bf03d4";
+
 
   const generateMemeMovie = (mod: string, movieTitle: string): string => {
     /*   const randomMovie = movieList[Math.floor(Math.random() * movieList.length)]; */
