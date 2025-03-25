@@ -27,7 +27,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "movie.ts"
+    "movie.ts",
+    "src/utils/generateMemeMovie.ts"
   ],
   "exclude": ["node_modules"]
 }

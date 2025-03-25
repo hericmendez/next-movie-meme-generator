@@ -1,7 +1,11 @@
+/** @type {import('next').NextConfig} */
+
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    domains: ["image.tmdb.org"], // Permite carregar imagens da TMDb
+  },
 };
 
 export default nextConfig;
