@@ -22,6 +22,7 @@ import {
 
 export default function HomePage() {
   const { movie, fetchMovieData } = useFetchRandomMovie();
+  console.log("movie ==> ", movie);
   const [inputValue, setInputValue] = useState<string>("");
   console.log(inputValue);
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -40,7 +41,6 @@ export default function HomePage() {
           </Text>
           <Text>E talvez descubra um filme incrível no processo!</Text>
         </div>
-
         <InputDiv>
           <Input
             onChange={handleInputChange}
@@ -59,9 +59,15 @@ export default function HomePage() {
             GERAR TÍTULO!
           </Button>
         </InputDiv>
-
         {/* Seção 2/3 */}
-        {!movie ? <div></div> : <MovieCard mod={inputValue} movie={movie} />}
+        {!movie ? (
+          <div></div>
+        ) : !movie ? (
+          <div></div>
+        ) : (
+          <MovieCard mod={inputValue} movie={movie} />
+        )}{" "}
+        {/* o erro está na prop movie */}
       </Content>
 
       <Footer>

@@ -5,17 +5,18 @@ import generateMemeMovie from "@/utils/generateMemeMovie";
 import Modal from "../Modal";
 import MovieDetailsCard from "./MovieDetailsPage/[id]";
 interface Movie {
-  movie: {
-    id: string,
-    title: string;
+  id?: string;
+  title: string;
+  release_date: string;
+  poster_path: string;
+}
 
-    release_date: string;
-    poster_path: string;
-  };
+interface MovieCardProps {
+  movie: Movie;
   mod: string;
 }
 
-const MovieCard: FC<Movie> = ({ movie, mod: mod }) => {
+const MovieCard: FC<MovieCardProps> = ({ movie, mod }) => {
   return (
     <Card>
       <CardText>
@@ -35,8 +36,7 @@ const MovieCard: FC<Movie> = ({ movie, mod: mod }) => {
           }
         >
           <div>
-         
-            <MovieDetailsCard id={movie.id}  />
+            <MovieDetailsCard id={String(movie.id)} />
           </div>
         </Modal>
         <br />
